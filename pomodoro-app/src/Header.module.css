@@ -1,0 +1,18 @@
+/* Header.module.css */
+.header {
+    background-color:var(--secondary-color); /* Cor de fundo do cabeçalho */
+    color: #fff; /* Cor do texto */
+    padding: 10px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    top: 0;
+    width: 100vw;
+
+    z-index: 1000; /* Garante que o cabeçalho fique sobre outros elementos */
+  }
+  
+  .header h1{
+    font-size: 1.5rem; /* Tamanho da fonte */
+    font-weight: 600; /* Peso da fonte */
+    margin: 0;
+    padding: 0;
+  }

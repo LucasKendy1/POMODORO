@@ -1,0 +1,17 @@
+/* Footer.module.css */
+.footer {
+    background-color: #104150; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto */
+    padding: 1rem; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    bottom: 0;
+    width: 100%;
+  }
+  .footer a {
+    color: #ffa; /* Cor do link */
+    text-decoration: none; /* Remove sublinhado do link */
+  }
+  .footer a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+  }
+  

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* index.css ou outro arquivo CSS global */
+@import "primeicons/primeicons.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #0D3441; /* Azul escuro para cor principal */
+  --secondary-color: #1C6E8C; /* Azul claro para cor secundária */
+  --accent-color: #FFB74D; /* Laranja suave para contrastes */
+  --background-color: #F4F4F9; /* Cor de fundo clara */
+  --text-color: #333333; /* Cor do texto principal */
+  --text-light-color: #666666; /* Cor do texto secundário */
+  --error-color: #FF5252; /* Vermelho para erros */
+  --success-color: #4CAF50; /* Verde para sucesso */
+  --warning-color: #FFC107; /* Amarelo para avisos */
+
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+
+}
+ 
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* background-color: var(--background-color); */
+  /* background-color: red; */
+  color: var(--text-color);
+  
+}
+
+button{
+  padding: 8px;
+  gap: 5px;
+}

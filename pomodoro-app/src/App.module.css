@@ -1,0 +1,44 @@
+.app{
+  width: calc(100vw);
+  height: calc(100vh);
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.pomodoro_container{
+  /* background-color: red; */
+  display: flex;
+  flex: 1;
+}
+
+.todolist_container{
+  /* background-color: blue; */
+  display: flex;
+  flex: 1;
+}
+
+.video_container{
+  /* background-color: green; */
+  display: flex;
+  flex: 1;
+}
+
+.mainContent{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  width: 100%;
+  background-color: #f4f4f4;
+
+}
+
+@media screen and (max-width: 1300px){
+  .app{
+    flex-direction: column;
+    overflow-y: auto;
+    justify-content: start;
+  }
+  
+}
