@@ -3,7 +3,7 @@ import { Dialog } from "primereact/dialog"; // Importando o Dialog do PrimeReact
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
 import styles from "./todolist.module.css"; // Importando o arquivo de estilos
-import 'primeicons/primeicons.css'; // Importando PrimeIcons
+import "primeicons/primeicons.css"; // Importando PrimeIcons
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -26,7 +26,7 @@ const TodoList = () => {
   }, [todos]);
 
   const openDialog = (index) => {
-    setTodoText(todos[index]);
+    setTodoText(todos[index].text);
     setEditIndex(index);
     setIsDialogVisible(true);
   };
@@ -40,7 +40,7 @@ const TodoList = () => {
   const handleSaveTodo = () => {
     if (editIndex !== null) {
       const updatedTodos = [...todos];
-      updatedTodos[editIndex] = todoText;
+      updatedTodos[editIndex].text = todoText;
       setTodos(updatedTodos);
     }
     closeDialog();
@@ -52,9 +52,15 @@ const TodoList = () => {
 
   const handleAddTodo = () => {
     if (newTodo.trim()) {
-      setTodos([...todos, newTodo]);
+      setTodos([...todos, { text: newTodo, completed: false }]);
       setNewTodo("");
     }
+  };
+
+  const toggleTodoCompletion = (index) => {
+    const updatedTodos = [...todos];
+    updatedTodos[index].completed = !updatedTodos[index].completed;
+    setTodos(updatedTodos);
   };
 
   return (
@@ -76,18 +82,32 @@ const TodoList = () => {
 
       <ul>
         {todos.map((todo, index) => (
-          <li key={index} className={styles.todoItem}>
-            {todo}
-            <Button
-              icon="pi pi-pencil"
-              className="p-button-text"
-              onClick={() => openDialog(index)}
-            />
-            <Button
-              icon="pi pi-trash"
-              className="p-button-text"
-              onClick={() => handleDeleteTodo(index)}
-            />
+          <li
+            key={index}
+            className={`${styles.todoItem} ${
+              todo.completed ? styles.completed : ""
+            }`}
+          >
+            <div>
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => toggleTodoCompletion(index)}
+              />
+              {todo.text}
+            </div>
+            <div>
+              <Button
+                icon="pi pi-pencil"
+                className="p-button-text"
+                onClick={() => openDialog(index)}
+              />
+              <Button
+                icon="pi pi-trash"
+                className="p-button-text"
+                onClick={() => handleDeleteTodo(index)}
+              />
+            </div>
           </li>
         ))}
       </ul>

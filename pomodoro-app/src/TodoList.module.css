@@ -14,7 +14,13 @@
   padding: 10px ;
   border-bottom: 1px solid #ccc;
 }
+.todoItem input[type="checkbox"] {
+  margin-right: 10px;
+}
 
+.completed {
+  text-decoration: line-through;
+}
 .dialogContent {
   margin-top: 20px;
 }
